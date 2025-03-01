@@ -1,3 +1,35 @@
+ANACONDA COMAND PROMNT
+
+1. Intall jupyter book
+
+conda install -c conda-forge jupyter-book
+
+2. Set the working environment
+
+cd documents\DS-Books
+
+3. Create a book
+
+jupyter-book create book_test/
+
+4. Build a book
+
+jupyter-book build book_test/
+
+----------------------------------------------------------------
+
+PUBLISH THE BOOK THROUGH GITHUB PAGES
+
+1. Publish the book project in github (the whole project)
+
+2. Start github pages as usual but using Github Actions
+
+   click on 'configure' within 'GitHub Pages Jekyll'
+
+   paste the following and commit:
+
+...................................
+
 name: deploy-book
 
 # Run this when the master or main branch changes
@@ -50,7 +82,7 @@ jobs:
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v4
       with:
         path: "_build/html"
 
